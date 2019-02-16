@@ -1,0 +1,50 @@
+Benjamin Linam
+Data Structures and Algorithms II
+Project 3
+Functional Decomposition
+
+Files and Functions in the Program
+This file includes the function prototypes contains all global variables
+	functions.h
+This file includes the main function for the project which includes calling functions found in functions.c.  	
+	main.c
+This file contains the function definitions for all of the functions in the program.
+	functions.c
+
+This function takes and finds the factorial of an integer and returns a long int.
+long factorial(int n);
+This function takes in an integer containing user defined "citynum" and displays the values stored in "sArray" which holds the permuted values of city tours.  Returns void.
+void printsArray(int n);
+This function takes in an integer n with user defined value "citynum" and initializes all values stored in sArray, tourLengths1, and tourLengths2 to 0. It also fills sArray with city values from 0 through n, with n+1 also equaling 0.  Returns void.
+void init1DArrays(int n);
+This function takes in an integer n containing user defined value "citynum" and for length n, permutes values stored in sArray.  Returns void.
+void perm(int n);
+This function takes in an integer n containing user defined value "tournum" and for length n, displays the values stored in arrays tourLengths1 and tourLengths2.  This function is used for debugging and testing code. Returns void.  
+void displaytourLengtharrays(int n);
+This function takes in integers n and m containing user defined values "tournum" and "citynum" and initializes all values stored in adjmatrix, tourtable1, and tourtable2 to 0.  Returns void.
+void init2DArrays(int n, int m);
+This function takes in an integer n containing "citynum" and copies the values stored in edgevalues to adjmatrix.  Fills diagonals with 0's.  Returns void.
+void storeEdgeWeights(int n);
+This function takes in integers n and m containing user defined values "tournum" and "citynum" and fills the first table of tours (tourtable1) with the initial elites and their permutations.  Returns void.
+void fillPrimeTable(int n, int m);
+This function takes in integer n containing user defined value "citynum" and displays the values stored in adjmatrix.  This function is used for debugging and testing code. Returns void.
+void displayAdjacencyMatrix(int n);
+This function takes in integers n and m containing user defined values "citynum" and "tournum" and displays the values stored in both tourtable1 and tourtable2.  This function is used for debugging and testing code. Returns void.
+void displayTourTables(int n, int m);
+This function takes in integers n and m containing user defined values "citynum" and "tournum" and sums the distances between each city in a given tour stored in tourtable1.  Returns void.
+void updatetourLengths1(int n, int m);
+This function takes in integers n and m containing user defined values "citynum" and "tournum" and sums the distances between each city in a given tour stored in tourtable2.  Returns void.
+void updatetourLengths2(int n, int m);
+This function takes in integers n and m containing user defined values "citynum" and "tournum" and determines the most cost efficient tours and updates the elites of tourtable1 with those tours.  This function also copies its elites into tourtable2 and mutates the elite tours to fill the remainder of the table.  Returns void.
+void findElites1(int n, int m);
+This function takes in integers n and m containing user defined values "citynum" and "tournum" and determines the most cost efficient tours and updates the elites of tourtable2 with those tours.  This function also copies its elites into tourtable1 and mutates the elite tours to fill the remainder of the table.  Returns void.
+void findElites2(int n, int m);
+This function takes in an integer n containing user defined value "tournum" and calculates the available number of tours to mutate while also leaving 2 elite tours per generation.  Returns void.
+void solvepercentMutation(int n);
+This function takes in an integer n containing user defined value "citynum" and for factorial(n-1)-n times, permutes every possible tour combination until the most cost efficient tour is located.  Returns void.
+void bruteforce(int n);
+
+
+
+
+

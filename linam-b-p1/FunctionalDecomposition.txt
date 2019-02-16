@@ -1,0 +1,58 @@
+Benjamin Linam
+Data Structures and Algorithms II
+Project 1
+Functional Decomposition
+
+User-defined data structures used as parameters in the functions
+	struct Node{
+		char name[NAMESIZE];
+		char type;
+		struct Node* parent;
+		struct Node* rsibling;
+		struct Node* lsibling;
+		struct Node* child;
+	}*current, *temp1, *temp2, *source;
+Files and Functions in the Program
+This file includes the definitions and values for many of the variables used by functions throughout the program.
+	definitions.h
+This file contains the prototypes for all of the functions used in the program.  It also houses the definition of the structure “Node” that is critical to the life of the program.
+	prototypes.h
+This file includes the main function for the project.  Besides having function calls to the two larger functions that run the program, it also searches for the input file “commands.txt”.
+	UNIXcommands.c
+	This file contains the function definitions for the remainder of the functions in the program.
+	functions.c
+This function creates and links the nodes “Linam” and “root”.  It leaves the current pointer at root at the start of the program.
+void createRootpath( );
+This function recognizes input from the input file “commands.txt” and evaluates the desired commands by calling the corresponding functions.
+int evaluatecommands( );
+This function allocates memory for any new node and sets each node pointer to NULL.  It returns a node pointer to the location in memory.
+struct Node *CreateNewNode( );
+This function separates each line of input from the input file “commands.txt” and tokenizes each word into an array that can then be referenced by other functions.  
+void tokenize( );
+This function recursively searches the directory tree for child nodes of another given node and frees the memory associated with each.  This is used as part of “rm” command.
+void delete(struct Node*);
+This function also recursively searches the directory tree; however, it compares a search value to the names of each node in the tree.  If it finds the correct node, it outputs the path from the source node to the correct node.  This represents the “whereis” command.
+void whereis(char*, struct Node*);
+This function creates a new child node for the current directory node and assigns it with a key value of ‘D’.  It determines if there is an existing child or not, and then inserts and arranges it into the sibling list.  This represents the “mkdir” command.
+void mkdir( );
+This function creates a new child node for the current directory node and assigns it with a key value of ‘F’.  It determines if there is an existing child or not, and then inserts and arranges it into the sibling list.  This represents the “addf” command.
+void addf( );
+This function moves the current directory node to the parent of its list of siblings.  It recognizes if there is a parent to move to and deals with the situation accordingly.  This represents the “cd..” command.
+void reverseCD( );
+This function searches for a certain child of the current node and reassigns current to it.  If the search value is not found, current stays at its original location.  This represents the “cd” command.
+void CD( );
+This function navigates from the current directory node to the source node and outputs the path from source to current.  This represents the “pwd” command.
+void pwd( );
+This function outputs the names and types of all children for the current directory node.  This represents the “ls” command.
+void ls( );
+This function searches the children for the current directory node and once the certain child is found, “delete( )”is called to free the node and its children.  The sibling list is then re-linked as to keep the order of the remaining nodes intact.  This is used as part of the “rm” command.
+void rm( );
+This function is used to copy a input name to the name of a certain node.  The list of children for the current node is searched and once the correct node is found, its name value is overwritten.  This represents the “mv” command.
+void mv( );
+This function utilizes recursion to make a deep copy of a certain node and its corresponding children into the current child list.  This represents the “cp” command.
+void cp( );
+
+
+
+
+

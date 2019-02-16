@@ -1,0 +1,31 @@
+Benjamin Linam
+Data Structures and Algorithms II
+Project 5
+Functional Decomposition
+
+Files and Functions in the Program
+This file includes the main function for the project which includes calling functions from part1.c and part2.c 	
+	main.c
+This file contains code executed during part1 of the program.  Reads strings saved in twoSequences and determines LCS of the two.  Function then outputs the LCS to the console.
+	part1.c
+This file contains code executed during part2 of the program.  Reads string lengths from multipleSequences and determines offset from start of file.  Function then directly accesses two string locations to compare string and LCS lengths.
+	part2.c
+This file contains the function definitions for void PrintReverse(int) and int offsetLength(int[], int, int)
+	functions.c
+This file contains the libraries used in main.c.
+	main.h
+This file contains all variables and libraries used in part1.c as well as function prototype.	
+	part1.h
+This file contains all variables and libraries used in part2.c as well as function prototype.
+	part2.h
+This file contains the function prototype of PrintReverse and offsetLength. 
+	functions.h
+
+Reads strings saved in twoSequences and determines LCS of the two.  Function then outputs the LCS to the console.
+void part1(void);
+Reads string lengths from multipleSequences and determines offset from start of file.  Function then directly accesses two string locations to compare string and LCS  Outputs array containing similarities between strings such as H, M, L, or D.
+void part2(void);
+Function recursively outputs a string in reverse order.  Takes in an int "length" and returns void.
+void PrintReverse(int);
+Function takes in the int strlen array, specific location in file saved as an int, and the number of digits used in the initial integer to determine how many strings are in the file.  Calculates offset length for each string by totalling the string lengths of each string located before itself in the file.  Also calculates the number of newline characters located in file before search string.  Returns an int offset length.
+int offsetLength(int[], int, int);

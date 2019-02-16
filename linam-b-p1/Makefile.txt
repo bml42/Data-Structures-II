@@ -1,0 +1,8 @@
+edit : UNIXcommands.o functions.o
+	gcc -o edit UNIXcommands.o functions.o -lm
+UNIXcommands.o : UNIXcommands.c defintions.h prototypes.h
+	gcc -g -Wall UNIXcommands.c
+functions.o : functions.c definitions.h prototypes.h
+	gcc -g -Wall main.c
+clean:
+	rm edit UNIXcommands.o functions.o

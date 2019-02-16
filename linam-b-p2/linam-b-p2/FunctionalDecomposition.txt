@@ -1,0 +1,90 @@
+Benjamin Linam
+Data Structures and Algorithms II
+Project 2
+Functional Decomposition
+
+User-defined data structures used as parameters in the functions
+	struct Customer {
+
+	double arrivalTime;
+	double startofServiceTime;
+	double departureTime;
+	Customer nextCust;
+	Customer prevCust;
+};
+
+struct line {
+	double *arrivalTime;
+	int head;
+	int tail;
+	int size;
+};
+
+struct queue {
+	Customer head;
+	int size;
+};
+Files and Functions in the Program
+This file includes the function prototypes and structure creation
+	functions.h
+This file includes the main function for the project.  	
+	main.c
+	This file contains the function definitions for the remainder of the functions in the program.
+	functions.c
+
+This function calculates and returns the factorial of a variable "x".
+long factorial(int);
+This function calculates and returns the value for Po.
+double getPo(double, double, int);
+This function calculates and returns the value for L.
+double getPo(double, double, int);
+This function calculates and returns the value for W.
+double getW(double, double, double, int);
+This function calculates and returns the value for Lq.
+double getLq(double, double, double);
+This function calculates and returns the value for Wq.
+double getWq(double, double);
+This function calculates and returns the value for Rho.
+double getRho(double, double, int);
+This function uses a random number generator to return a random time interval.
+double GetNextRandomInterval(double);
+This function returns the arrival time of a customer "p".
+double getArrival(Customer);
+This function returns the start of service time for a customer "p".
+double getService(Customer);
+This function returns the departure time for a customer "p".
+double getDeparture(Customer);
+This function removes a customer from the FIFO queue.
+double removeQueue(line);
+This function returns the arrival time for a customer in the queue.
+double getArrivalQueue(line, int);
+This function inserts a customer into the priority queue.
+void insertPriorityQueue(queue, double, double, double);
+This function will free memory saved for the priority queue.
+void freePriorityQueue(queue);
+This function will free a specific customer.
+void freeCustomer(Customer);
+This function sets a customer "q" as the next customer of "p".
+void findnextCust(Customer, Customer);
+This function sets a customer "q" as the previous customer of "p".
+void findprevCust(Customer, Customer);
+This function will process each event until the completion of the simulation.
+void processNextEvents(int, queue, line, double, int, double);
+This function will insert a customer into the FIFO queue.
+void insertQueue(line, double);
+This function will free the entire queue.
+void freeQueue(line);
+This function will return a random number between 0 and 1.
+float randnum();
+This function will create a customer for service and initializes each of its values.
+Customer createCustomer(double, double, double, Customer, Customer);
+This function returns the previous customer for a certain customer "p".
+Customer getprevCust(Customer);
+This function creates the FIFO queue.
+line createLine();
+This function creates the Priority queue.
+queue createPriorityQueue();
+
+
+
+

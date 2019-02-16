@@ -1,0 +1,29 @@
+Benjamin Linam
+Data Structures and Algorithms II
+Project 4
+Functional Decomposition
+
+Files and Functions in the Program
+This file includes the main function for the project which includes calling functions from part1.h and part2.h 	
+	main.c
+This file contains code executed during part1 of the program.  Reads data stored in SimParameters.txt and computes the probability distribution and cumulative probability distribution, establishes random number intervals by use of randomNum function and carries out simulation to determine simulation and expected results of a frequency vector and simulation values.  
+	part1.c
+This file contains code executed during part2 of the program.  Reads data stored in c1.txt, c2.txt, c3.txt, and c4.txt and generates datasets based on a number of batches. It randomly creates bad batches containing both good and bad items.
+	part2.c
+This file contains the function definitions for int randomNum(int).
+	functions.c
+This file contains the libraries used in main.c.
+	main.h
+This file contains all variables and libraries used in part1.c as well as function prototype.	
+	part1.h
+This file contains all variables and libraries used in part2.c as well as function prototype.
+	part2.h
+This file contains the function prototype of randomNum. 
+	functions.h
+
+This function reads data stored in SimParameters.txt and computes the probability distribution and cumulative probability distribution, establishes random number intervals by use of randomNum function and carries out simulation to determine simulation and expected results of a frequency vector and simulation values.  The program outputs final information for each simulation evaluated.
+void part1(void);
+This file contains code executed during part2 of the program.  Reads data stored in c1.txt, c2.txt, c3.txt, and c4.txt and generates datasets based on a number of batches. It randomly creates bad batches containing both good and bad items.  It then reads each .txt file it creates and evaluates random samplings for the values stored to determine whether or not the file is of a good or bad "batch". It then calculates statistical information including the umber of batches of items, number of items in each batch, the percentage of batches containing bad items, percentage of items that are bad in a bad set, the Items sampled from each set, base, exponent, P(failure to detect bad item), P(batch is good), and percentage of bad batches detected.
+void part2(void);
+This function takes in an integer value and returns an integer.  It calculates a random number on an interval from 0 to maxNum.
+int randomNum(int);
